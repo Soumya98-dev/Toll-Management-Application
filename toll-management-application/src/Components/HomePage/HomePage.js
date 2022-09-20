@@ -1,11 +1,20 @@
 import React from "react";
 import "./HomePage.css";
+import { tollEntries } from "../../tollentries";
+import VehicleLogs from "../Vehicle Logs/VehicleLogs";
 
-function HomePage() {
+function HomePage({ query, setQuery }) {
+  const keys = ["vehicleType", "vehicleNo", "tollName"];
+
+  const search = (data) => {
+    return data.filter((item) =>
+      keys.some((key) => item[key].toLowerCase().includes(query))
+    );
+  };
+
   return (
     <div className="homepage">
       <h1>Toll Management Application</h1>
-      {/* <hr></hr> */}
       <div className="toll-operations">
         <div className="toll-operations-1">
           <h3>
@@ -13,7 +22,11 @@ function HomePage() {
           </h3>
           <i className="fa-solid fa-filter filter"></i>{" "}
           <i className="fa-solid fa-magnifying-glass search"></i>
-          <input type="text" placeholder="Search vehicle" />
+          <input
+            type="text"
+            placeholder="Search Vehicle"
+            onChange={(e) => setQuery(e.target.value)}
+          />
         </div>
         <div className="toll-operations-2">
           <button>Add vehicle entry</button>
@@ -21,36 +34,7 @@ function HomePage() {
           <button>View all tolls</button>
         </div>
       </div>
-      <table className="vehicle-logs">
-        <tr className="table-headers">
-          <th>VEHICLE TYPE</th>
-          <th>VEHICLE NUMBER</th>
-          <th>DATE/TIME</th>
-          <th>TOLL NAME</th>
-          <th>TARIFF</th>
-        </tr>
-        <tr>
-          <td>Car/Jeep/Van</td>
-          <td>TN24AQ4644</td>
-          <td>09/09/2022, 16:43:48</td>
-          <td>Chengalpattu</td>
-          <td>60</td>
-        </tr>
-        <tr>
-          <td>Car/Jeep/Van</td>
-          <td>TN19QQ1234</td>
-          <td>09/09/2022, 15:30:34</td>
-          <td>Kappalur</td>
-          <td>75</td>
-        </tr>
-        <tr>
-          <td>Heavy Vehicle</td>
-          <td>TN24AA1234</td>
-          <td>09/09/2022, 12:12:34</td>
-          <td>Kappalur</td>
-          <td>400</td>
-        </tr>
-      </table>
+      <VehicleLogs data={search(tollEntries)} />
     </div>
   );
 }

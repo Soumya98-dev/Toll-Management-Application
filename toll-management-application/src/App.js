@@ -2,9 +2,10 @@ import React from "react";
 import HomePage from "./Components/HomePage/HomePage";
 
 function App() {
+  const [query, setQuery] = React.useState("");
   return (
     <div>
-      <HomePage />
+      <HomePage query={query} setQuery={setQuery} />
     </div>
   );
 }
