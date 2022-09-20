@@ -1,0 +1,81 @@
+.homepage>h1 {
+    padding: 1rem;
+    font-size: 20px;
+    border-bottom: 1px solid rgb(203, 193, 193);
+    width: 100%;
+}
+
+.toll-operations {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.toll-operations-1 {
+    display: flex;
+    align-items: center;
+}
+
+.toll-operations-1>h3 {
+    margin-left: 10px;
+}
+
+.toll-operations-1>.filter {
+    border-left: 2px solid rgb(142, 139, 139);
+    padding: 0 0 0 5px;
+    margin: 0 0 0 10px;
+    line-height: 12px;
+}
+
+.toll-operations-1>.search {
+    /* position: absolute;
+    left:260px; */
+    position: relative;
+    left: 25px;
+    top: -0px;
+    z-index: 999;
+    color: rgb(142, 139, 139)
+}
+
+.toll-operations-1>input[type="text"] {
+    /* position: relative; */
+    border-radius: 20px;
+    padding: 5px 30px;
+    border: 1px solid rgb(142, 139, 139);
+}
+
+.toll-operations-2>button {
+    margin: 0 10px;
+    background-color: rgba(48, 119, 232, 0.943);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 10px;
+    cursor: pointer;
+}
+
+.toll-operations-2>button:hover {
+    background-color: rgba(26, 98, 212, 0.943);
+}
+
+.vehicle-logs {
+    text-align: center;
+    margin: 3rem auto;
+    width: 99%;
+    border-collapse: collapse;
+}
+
+th {
+    background-color: rgba(199, 197, 197, 0.187);
+    color: rgb(110, 103, 103);
+    padding: 5px 10px;
+    font-weight: 200;
+    ;
+}
+
+td {
+    padding: 20px;
+    border-bottom: 1px solid rgb(205, 198, 198);
+    font-weight: 900;
+}
