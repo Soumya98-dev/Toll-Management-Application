@@ -2,14 +2,32 @@ import React from "react";
 import "./HomePage.css";
 import { tollEntries } from "../../tollentries";
 import VehicleLogs from "../Vehicle Logs/VehicleLogs";
+import Dialog from "../DialogBox/Dialog";
+import VehicleEntryDialog from "../DialogBox/VehicleEntryDialog";
+// import VehicleTypeSelect from "../DialogBox/VehicleTypeSelect";
 
-function HomePage({ query, setQuery }) {
+function HomePage({
+  query,
+  setQuery,
+  showAddToll,
+  setShowAddToll,
+  showAddEntry,
+  setShowAddEntry,
+}) {
   const keys = ["vehicleType", "vehicleNo", "tollName"];
 
   const search = (data) => {
     return data.filter((item) =>
       keys.some((key) => item[key].toLowerCase().includes(query))
     );
+  };
+
+  const toggleAddEntry = () => {
+    setShowAddEntry((prevShowAddEntry) => !prevShowAddEntry);
+  };
+
+  const toggleAdd = () => {
+    setShowAddToll((prevShowAddToll) => !prevShowAddToll);
   };
 
   return (
@@ -29,10 +47,15 @@ function HomePage({ query, setQuery }) {
           />
         </div>
         <div className="toll-operations-2">
-          <button>Add vehicle entry</button>
-          <button>Add new toll</button>
+          <button onClick={toggleAddEntry}>Add vehicle entry</button>
+          <button onClick={toggleAdd}>Add new toll</button>
           <button>View all tolls</button>
         </div>
+        <Dialog showAddToll={showAddToll} toggleAdd={toggleAdd} />
+        <VehicleEntryDialog
+          showAddEntry={showAddEntry}
+          toggleAddEntry={toggleAddEntry}
+        />
       </div>
       <VehicleLogs data={search(tollEntries)} />
     </div>

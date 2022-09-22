@@ -1,0 +1,85 @@
+.add-toll-form {
+    width: 43%;
+    position: absolute;
+    top: 150px;
+    right: 250px;
+    border-radius: 10px;
+    border: 1px solid;
+    height: 65%;
+    font-size: 15px;
+    background-color: white;
+    margin: 0 0 0 12px;
+    padding: 0 0 0 2rem;
+    box-shadow: 10px 10px 28px 0px #efebeb;
+}
+
+.add-vehicle-entry {
+    width: 30%;
+    padding: 0 2rem;
+}
+
+.add-vehicle-entry>input {
+    width: 90%;
+}
+
+.add-vehicle-entry>.cross-icon {
+    position: relative;
+    left: 350px;
+    top: 20px;
+    color: rgb(142, 139, 139);
+    cursor: pointer;
+}
+
+.add-vehicle-entry>select {
+    width: 90%;
+    margin: 10px 0;
+}
+
+.required:after {
+    content: "*";
+    color: red;
+    font-size: 15px;
+}
+
+select {
+    font-weight: bold;
+    padding: 5px 10px;
+}
+
+.cross-icon {
+    position: relative;
+    left: 520px;
+    top: 20px;
+    color: rgb(142, 139, 139);
+    cursor: pointer;
+}
+
+
+.add-toll-form>input {
+    margin: 10px 5px;
+    padding: 8px 10px;
+    border: 1px solid rgb(142, 139, 139);
+}
+
+#tollName {
+    width: 95%;
+}
+
+.add-toll-form>h3 {
+    margin: 10px 0;
+    text-align: center;
+}
+
+.add-toll-form>button {
+    width: 96%;
+    padding: 10px 0;
+    background-color: rgb(68, 80, 239);
+    border: none;
+    color: white;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.add-toll-form>button:hover {
+    background-color: rgb(51, 64, 237);
+}
